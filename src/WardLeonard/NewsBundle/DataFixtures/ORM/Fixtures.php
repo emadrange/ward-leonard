@@ -21,8 +21,8 @@ class Fixtures extends Fixture
         $news->setTitle('Ward Leonard en concert à Rock en Seine');
         $news->setContent('Bla... bla...');
         $news->setAuthor('Omar');
-        $news->setVideo('concert.mp4');
-        $news->setPhoto('concert.jpg');
+        $news->setVideo('P295QWaYJfY');
+        $news->setPhoto('eric.jpg');
 
         $manager->persist($news);
         $manager->flush();

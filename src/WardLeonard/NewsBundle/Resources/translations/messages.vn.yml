@@ -1,0 +1,7 @@
+form:
+  news:
+    title: "Tiêu đề"
+    content:  "Nội dung"
+    author:  "Tác giả"
+    video:  "Phim ảnh"
+    photo:  "Hình ảnh"

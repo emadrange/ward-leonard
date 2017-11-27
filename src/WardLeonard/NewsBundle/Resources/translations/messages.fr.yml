@@ -1,0 +1,7 @@
+form:
+  news:
+    title: "Titre"
+    content:  "Contenu"
+    author:  "Auteur"
+    video:  "Vidéo"
+    photo:  "Image"
