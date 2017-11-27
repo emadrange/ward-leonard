@@ -1,4 +1,10 @@
 {% extends '::base.html.twig' %}
 {% block section %}
-
+    {% for new in news %}
+        <article>
+            <h2>
+                {{ new.title }}
+            </h2>
+        </article>
+    {% endfor %}
 {%  endblock %}
