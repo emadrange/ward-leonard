@@ -3,14 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/Home/css/styles.css') }}">
+            <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600,700,900" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('bundles/Home/css/font-awesome.min.css') }}">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}
             {% block header %}
                 <header>
-                    <img src="" alt="logo-site" class="logo"><h1>Ward Leonard</h1>
+                    <img src="{{ asset('bundles/Home/images/logo.png') }}" alt="logo-site" class="logo"><h1>Ward Leonard</h1>
                     <nav>
                         <ul>
                             <li><a href="">Actualité</a></li>
@@ -19,7 +23,7 @@
                             <li><a href="">Contact</a></li>
                         </ul>
                     </nav>
-                    <img src="" alt="menu-hamburger">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
                 </header>
             {% endblock %}
             <main class="main">
