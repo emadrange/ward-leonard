@@ -1,0 +1,9 @@
+{{ form_start(form_add) }}
+
+{{ form_row(form_add.title) }}
+
+{{ form_errors(form_add.content) }}
+{{ form_label(form_add.content, null, {'label_attr': {'class': 'danger'}}) }}
+{{ form_widget(form_add.content) }}
+{{ form_rest(form_add) }}
+{{ form_end(form_add) }}

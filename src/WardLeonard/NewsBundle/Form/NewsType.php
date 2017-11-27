@@ -21,9 +21,9 @@ class NewsType extends AbstractType
         $builder
             ->add('title',TextType::class, array(
                 'label' => 'form.news.title',
-                'placeholder' => 'saisir un titre',
                 'attr' => array(
-                 'class' => 'input'
+                    'class' => 'input',
+                    'placeholder' => 'saisir un titre'
                 )
             ))->add('content', TextareaType::class, array(
                 'label' => 'form.news.content',

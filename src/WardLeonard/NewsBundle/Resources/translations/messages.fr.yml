@@ -5,3 +5,5 @@ form:
     author:  "Auteur"
     video:  "Vidéo"
     photo:  "Image"
+    save: "Enregistrer"
+    reset: "Effacer"
