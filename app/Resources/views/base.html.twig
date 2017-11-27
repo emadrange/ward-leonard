@@ -7,7 +7,36 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block header %}
+                <header>
+                    <img src="" alt="logo-site" class="logo"><h1>Ward Leonard</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="">Actualité</a></li>
+                            <li><a href="">Le groupe</a></li>
+                            <li><a href="">Discographie</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <img src="" alt="menu-hamburger">
+                </header>
+            {% endblock %}
+            <main class="main">
+            {% block section %}
+            {% endblock %}
+            </main>
+            {% block footer %}
+                <footer>
+                    <ul>
+                        <li><a href="">Plan du site</a></li>
+                        <li><a href="">Mentions légales</a></li>
+                        <li><a href="">Liens sociaux</a></li>
+                    </ul>
+                </footer>
+            {% endblock %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
+
