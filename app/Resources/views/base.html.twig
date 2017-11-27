@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('bundles/Home/css/styles.css') }}">
+            <link rel="stylesheet" href="{{ asset('News/styles.css') }}">
             <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600,700,900" rel="stylesheet">
-            <link rel="stylesheet" href="{{ asset('bundles/Home/css/font-awesome.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('News/font-awesome.min.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -14,7 +14,7 @@
         {% block body %}
             {% block header %}
                 <header>
-                    <img src="{{ asset('bundles/Home/images/logo.png') }}" alt="logo-site" class="logo"><h1>Ward Leonard</h1>
+                    <img src="{{ asset('News/images/logo.png') }}" alt="logo-site" class="logo"><h1>Ward Leonard</h1>
                     <nav>
                         <ul>
                             <li><a href="">Actualité</a></li>
