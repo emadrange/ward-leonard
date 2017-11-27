@@ -1,17 +1,17 @@
 <?php
 
-namespace WardLeonard\HomeBundle\Controller;
+namespace WardLeonard\NewsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class HomeController extends Controller
+class NewsController extends Controller
 {
     /**
      * @Route("/")
      */
     public function indexAction()
     {
-        return $this->render('WardLeonardHomeBundle:Home:index.html.twig');
+        return $this->render('WardLeonardNewsBundle:Home:index.html.twig');
     }
 }

@@ -1,5 +1,5 @@
-ward_leonard_home:
-    resource: "@WardLeonardHomeBundle/Controller/"
+ward_leonard_news:
+    resource: "@WardLeonardNewsBundle/Controller/"
     type:     annotation
     prefix:   /
 
