@@ -3,6 +3,8 @@
 namespace WardLeonard\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * News
@@ -25,6 +27,11 @@ class News
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Regex(
+     *     pattern="/^[a-z]+$/i",
+     *     message="validator.news.title.regex"
+     * )
      */
     private $title;
 

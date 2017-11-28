@@ -1,10 +1,16 @@
+{% form_theme form_add with 'WardLeonardNewsBundle:Form:form_error.html.twig' %}
+
+
+
+
 {% for flashMessage in app.session.flashbag.get('notice') %}
   {{ flashMessage }}
     {% endfor %}
 {{ form_start(form_add) }}
-
-{{ form_row(form_add.title) }}
-
+<div>
+{{ form_label(form_add.title) }}
+{{ form_widget(form_add.title) }}{{ form_errors(form_add.title) }}
+</div>
 {{ form_errors(form_add.content) }}
 {{ form_label(form_add.content, null, {'label_attr': {'class': 'danger'}}) }}
 {{ form_widget(form_add.content) }}

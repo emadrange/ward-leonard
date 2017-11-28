@@ -4,6 +4,7 @@ namespace WardLeonard\NewsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,13 +16,16 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class BackController extends Controller
 {
     /**
-     * @Route("/admin")
+     * @Route("/admin", name="back_news_liste")
      *
      */
     public function indexAction()
     {
-        return $this->render('WardLeonardNewsBundle:Back:index.html.twig', array(
-            // ...
+
+        $repository = $this->getDoctrine()->getManager()->getRepository("WardLeonardNewsBundle:News");
+        $news = $repository->findAll();
+
+        return $this->render('WardLeonardNewsBundle:Back:index.html.twig', array('news' => $news
         ));
     }
 
@@ -72,6 +76,25 @@ class BackController extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @Route("/admin/delete/{id}", name="back_news_delete")
+     */
+    public function deleteAction(Request $request, $id)
+    {
 
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository("WardLeonardNewsBundle:News");
+
+        $news = $repository->find($id);
+
+        if($news !==null ) {
+            $em->remove($news);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('back_news_liste'));
+    }
 
 }

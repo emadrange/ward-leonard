@@ -1,0 +1,4 @@
+validator:
+  news:
+    title:
+      regex: "Seulement des caractères SVP !!!"
