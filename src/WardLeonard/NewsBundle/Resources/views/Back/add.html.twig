@@ -1,11 +1,15 @@
+{% extends '::base.html.twig' %}
+
 {% form_theme form_add with 'WardLeonardNewsBundle:Form:form_error.html.twig' %}
 
+{% block section %}
 
-
+    <h2>{{ titre }}</h2>
 
 {% for flashMessage in app.session.flashbag.get('notice') %}
   {{ flashMessage }}
-    {% endfor %}
+{% endfor %}
+
 {{ form_start(form_add) }}
 <div>
 {{ form_label(form_add.title) }}
@@ -16,6 +20,8 @@
 {{ form_widget(form_add.content) }}
 {{ form_rest(form_add) }}
 {{ form_end(form_add) }}
+
+{% endblock %}
 
 {% block javascripts %}
 <script>

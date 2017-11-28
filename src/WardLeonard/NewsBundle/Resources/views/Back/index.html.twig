@@ -6,7 +6,7 @@
 <h1>Welcome to the Back:index page</h1>
 
     {% for value in news %}
-        {{ value.title }} <a href="{#{ path('back_news_modify', {'id': value.id})}#}"> Modifier </a>
+        {{ value.title }} <a href="{{ path('back_news_modify', {'id': value.id})}}"> Modifier </a>
         <a href="{{ path('back_news_delete',{'id': value.id}) }}"> Supprimer </a>
     {% endfor %}
 {% endblock %}
