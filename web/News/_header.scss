@@ -1,61 +1,77 @@
 header{
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  img{
-    width: 15%;
-  }
-  h1{
-    width: 35%;
-    vertical-align: center;
-    font-size: 2.5rem;
-    @media screen and (min-width: 320px) {
-      font-size: 1.5rem;
-    }
-  }
-  nav{
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: block;
-    width: 35%;
-    height: 100vh;
-    background-color: black;
-    ul{
-      li{
-        list-style: none;
-        border-bottom: 1px dotted white;
-        a{
-          display: block;
-          text-decoration: none;
-          color: white;
-          padding: .4rem;
-        }
-      }
-    }
-    @media screen and (min-width: 768px){
-      width: 35%;
-      display: block;
-      ul{
-        display: flex;
-        justify-content: space-between;
-        li{
-          list-style: none;
-          a{
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-  i.fa-bars{
-    padding: 1rem;
-    display: block;
-    @media screen and (min-width: 768px) {
-      display: none;
-    }
-  }
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #D81B60;
+    border: 1px solid black;
 
+    img{
+        width: 15%;
+    }
+
+    h1{
+        text-align: center;
+        font-size: 1rem;
+        width: 80%;
+
+        @media screen and (min-width: 320px) {
+            font-size: 1.5rem;  
+        }
+
+        @media screen and (min-width: 768px) {
+            font-size: 2rem;  
+        }
+    }
+
+    nav{
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        width: 45%;
+        height: 100vh;
+        background-color: #F48FB1; 
+        border-left: 1px solid silver;
+        ul{
+            li{
+                list-style: none;
+                border-bottom: 1px dotted white;
+                a{
+                    display: block;
+                    text-decoration: none;
+                    color: white;
+                    padding: .4rem;
+                    padding-left: 1rem;
+                }
+            }
+        }
+        @media screen and (min-width: 768px) {
+            width: 55%;
+            display: block;
+            height: inherit;
+            background-color: inherit; 
+            ul{
+                display: flex;
+                justify-content: space-between;
+                li{
+                    list-style: none;
+                    a{
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    i.fa-bars{
+        padding: 1rem;
+        display: block;
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+    @media screen and(min-width: 768px) {
+        
+    }
 }

@@ -45,7 +45,8 @@ class NewsType extends AbstractType
                 'trim' => true
             ))
             ->add('photo',FileType::class, array(
-                'label' => 'form.news.photo'
+                'label' => 'form.news.photo',
+                'mapped' => false
             ));
     }
     
