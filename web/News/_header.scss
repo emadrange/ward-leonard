@@ -3,7 +3,8 @@ header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #E8EAF6;
+    background-color: #D81B60;
+    border: 1px solid black;
 
     img{
         width: 15%;
@@ -12,17 +13,15 @@ header{
     h1{
         text-align: center;
         font-size: 1rem;
-        border: 1px solid red;
         width: 80%;
 
         @media screen and (min-width: 320px) {
             font-size: 1.5rem;  
         }
 
-        @media screen and (min-width: 640px) {
-            font-size: 2.2rem;  
+        @media screen and (min-width: 768px) {
+            font-size: 2rem;  
         }
-        
     }
 
     nav{
@@ -32,16 +31,9 @@ header{
         display: block;
         width: 45%;
         height: 100vh;
-        background-color: #E91E63;
-        @media screen and (min-width: 768px) {
-            width: 35%;
-            display: block;
-        }
+        background-color: #F48FB1; 
+        border-left: 1px solid silver;
         ul{
-             @media screen and (min-width: 768px) {
-                display: flex;
-                justify-content: space-between;
-             }
             li{
                 list-style: none;
                 border-bottom: 1px dotted white;
@@ -50,6 +42,23 @@ header{
                     text-decoration: none;
                     color: white;
                     padding: .4rem;
+                    padding-left: 1rem;
+                }
+            }
+        }
+        @media screen and (min-width: 768px) {
+            width: 55%;
+            display: block;
+            height: inherit;
+            background-color: inherit; 
+            ul{
+                display: flex;
+                justify-content: space-between;
+                li{
+                    list-style: none;
+                    a{
+                        
+                    }
                 }
             }
         }
@@ -61,5 +70,8 @@ header{
         @media screen and (min-width: 768px) {
             display: none;
         }
+    }
+    @media screen and(min-width: 768px) {
+        
     }
 }
