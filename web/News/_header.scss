@@ -1,7 +1,9 @@
 header{
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
   img{
     width: 15%;
   }
@@ -9,9 +11,30 @@ header{
     width: 35%;
     vertical-align: center;
     font-size: 2.5rem;
+    @media screen and (min-width: 320px) {
+      font-size: 1.5rem;
+    }
   }
   nav{
-    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 35%;
+    height: 100vh;
+    background-color: black;
+    ul{
+      li{
+        list-style: none;
+        border-bottom: 1px dotted white;
+        a{
+          display: block;
+          text-decoration: none;
+          color: white;
+          padding: .4rem;
+        }
+      }
+    }
     @media screen and (min-width: 768px){
       width: 35%;
       display: block;
