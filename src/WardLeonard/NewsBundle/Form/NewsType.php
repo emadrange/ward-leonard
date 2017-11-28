@@ -21,12 +21,15 @@ class NewsType extends AbstractType
         $builder
             ->add('title',TextType::class, array(
                 'label' => 'form.news.title',
+                'required'=> false,
+                'trim' => true,
                 'attr' => array(
                     'class' => 'input',
                     'placeholder' => 'saisir un titre'
                 )
             ))->add('content', TextareaType::class, array(
                 'label' => 'form.news.content',
+                'trim' => true,
                 'attr' => array(
                     'rows' => 5,
                     'cols' => 40,
@@ -34,10 +37,12 @@ class NewsType extends AbstractType
                 )
             ))
             ->add('author', TextType::class, array(
-                'label' => 'form.news.author'
+                'label' => 'form.news.author',
+                'trim' => true
             ))
             ->add('video', TextType::class,array(
-                'label' => 'form.news.video'
+                'label' => 'form.news.video',
+                'trim' => true
             ))
             ->add('photo',FileType::class, array(
                 'label' => 'form.news.photo'

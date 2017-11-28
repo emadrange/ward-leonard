@@ -1,3 +1,6 @@
+{% for flashMessage in app.session.flashbag.get('notice') %}
+  {{ flashMessage }}
+    {% endfor %}
 {{ form_start(form_add) }}
 
 {{ form_row(form_add.title) }}
@@ -7,3 +10,22 @@
 {{ form_widget(form_add.content) }}
 {{ form_rest(form_add) }}
 {{ form_end(form_add) }}
+
+{% block javascripts %}
+<script>
+    window.onload = function(){
+
+
+
+        document.querySelector("textarea").textContent="";
+
+        var x = document.querySelectorAll("input");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].value = " ";
+        }
+    }
+
+</script>
+
+{% endblock %}
