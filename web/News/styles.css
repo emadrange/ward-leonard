@@ -1,26 +1,38 @@
 header {
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  background-color: white; }
+  background-color: #E8EAF6; }
   header img {
     width: 15%; }
   header h1 {
-    width: 35%;
-    vertical-align: center;
-    font-size: 2.5rem; }
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid red;
+    width: 80%; }
     @media screen and (min-width: 320px) {
       header h1 {
         font-size: 1.5rem; } }
+    @media screen and (min-width: 640px) {
+      header h1 {
+        font-size: 2.2rem; } }
   header nav {
     position: absolute;
     right: 0;
     top: 0;
     display: block;
-    width: 35%;
+    width: 45%;
     height: 100vh;
-    background-color: black; }
+    background-color: #E91E63; }
+    @media screen and (min-width: 768px) {
+      header nav {
+        width: 35%;
+        display: block; } }
+    @media screen and (min-width: 768px) {
+      header nav ul {
+        display: flex;
+        justify-content: space-between; } }
     header nav ul li {
       list-style: none;
       border-bottom: 1px dotted white; }
@@ -29,17 +41,6 @@ header {
         text-decoration: none;
         color: white;
         padding: .4rem; }
-    @media screen and (min-width: 768px) {
-      header nav {
-        width: 35%;
-        display: block; }
-        header nav ul {
-          display: flex;
-          justify-content: space-between; }
-          header nav ul li {
-            list-style: none; }
-            header nav ul li a {
-              text-decoration: none; } }
   header i.fa-bars {
     padding: 1rem;
     display: block; }
