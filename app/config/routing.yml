@@ -1,3 +1,8 @@
+ward_leonard_group:
+    resource: "@WardLeonardGroupBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 ward_leonard_news:
     resource: "@WardLeonardNewsBundle/Controller/"
     type:     annotation

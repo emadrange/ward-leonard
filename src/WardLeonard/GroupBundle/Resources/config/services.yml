@@ -1,0 +1,4 @@
+services:
+#    ward_leonard_group.example:
+#        class: WardLeonard\GroupBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
