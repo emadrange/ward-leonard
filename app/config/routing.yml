@@ -7,7 +7,7 @@ ward_leonard_group:
 ward_leonard_disco:
     resource: "@WardLeonardDiscoBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /disco
 
 ward_leonard_news:
     resource: "@WardLeonardNewsBundle/Controller/"
