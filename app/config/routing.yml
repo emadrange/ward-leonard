@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ward_leonard_group:
     resource: "@WardLeonardGroupBundle/Controller/"
+=======
+ward_leonard_disco:
+    resource: "@WardLeonardDiscoBundle/Controller/"
+>>>>>>> 42d73459589212e1787a4718dbf1f45c2bcbfaeb
     type:     annotation
     prefix:   /
 
