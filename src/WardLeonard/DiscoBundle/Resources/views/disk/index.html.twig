@@ -1,0 +1,12 @@
+
+{% block section %}
+	<ul>
+	{% for e in disks %}
+	<li>
+		<p>{{e.title}}
+			<i> Date de sortie: {{ e.dateSortie }}</i>
+		</p>
+	</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
