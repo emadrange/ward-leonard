@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class BackController extends Controller
 {
     /**
-     * @Route("/admin", name="back_news_liste")
+     * @Route("/admin", name="back_news_list")
      *
      */
     public function indexAction()
@@ -24,6 +24,24 @@ class BackController extends Controller
         $news = $repository->findAll();
 
         return $this->render('WardLeonardNewsBundle:Back:index.html.twig', array('news' => $news));
+    }
+
+    /**
+     * @Route("/admin/show/{id}", name="back_news_show")
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showAction($id) {
+        $em = $this->getDoctrine()->getManager();
+        $news = $em->getRepository('WardLeonardNewsBundle:News')->find($id);
+
+        if (!is_null($news)) {
+            return $this->render('WardLeonardNewsBundle:Back:show.html.twig', array('news' => $news));
+        } else {
+            return $this->redirect($this->generateUrl('back_news_list'));
+        }
+
+
     }
 
     /**
@@ -64,11 +82,9 @@ class BackController extends Controller
             $filePhoto->move($this->getParameter('image_path'), $filePhoto->getClientOriginalName());
 
             //$this->redirect($this->generateUrl('back_news_add'));
-        }
 
-         /*return $this->render('WardLeonardNewsBundle:Back:add.html.twig', array(
-             'form_add' => $form->createView()
-         ));*/
+            $this->redirectToRoute('back_news_list');
+        }
 
          return array('form_add' => $form->createView(), 'titre' => 'Ajouter une news');
          // redirige vers add.html.twig qui récupère form_add
@@ -106,7 +122,7 @@ class BackController extends Controller
             $em->flush();
             $filePhoto->move($this->getParameter('image_path'), $filePhoto->getClientOriginalName());
 
-            return $this->redirect($this->generateUrl('back_news_liste'));
+            return $this->redirect($this->generateUrl('back_news_list'));
         }
         return $this->render('WardLeonardNewsBundle:Back:add.html.twig', array(
             'form_add' => $form->createView(),
@@ -133,7 +149,7 @@ class BackController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('back_news_liste'));
+        return $this->redirect($this->generateUrl('back_news_list'));
     }
 
 }

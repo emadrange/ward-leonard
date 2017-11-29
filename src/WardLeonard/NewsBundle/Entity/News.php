@@ -29,7 +29,7 @@ class News
      * @ORM\Column(name="title", type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Regex(
-     *     pattern="/^[a-z]+$/i",
+     *     pattern="/^[a-zéèàêôû\s,;-_\.]*$/i",
      *     message="validator.news.title.regex"
      * )
      */
