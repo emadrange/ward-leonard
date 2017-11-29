@@ -10,14 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Lyric controller.
  *
- * @Route("lyric")
+ * @Route("/admin")
  */
 class LyricController extends Controller
 {
     /**
      * Lists all lyric entities.
      *
-     * @Route("/", name="lyric_index")
+     * @Route("/lyrics", name="lyric_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -34,7 +34,7 @@ class LyricController extends Controller
     /**
      * Creates a new lyric entity.
      *
-     * @Route("/new", name="lyric_new")
+     * @Route("lyric/new", name="lyric_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -60,7 +60,7 @@ class LyricController extends Controller
     /**
      * Finds and displays a lyric entity.
      *
-     * @Route("/{id}", name="lyric_show")
+     * @Route("lyric/show/{id}", name="lyric_show")
      * @Method("GET")
      */
     public function showAction(Lyric $lyric)
@@ -76,7 +76,7 @@ class LyricController extends Controller
     /**
      * Displays a form to edit an existing lyric entity.
      *
-     * @Route("/{id}/edit", name="lyric_edit")
+     * @Route("lyric/edit/{id}", name="lyric_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Lyric $lyric)
@@ -101,7 +101,7 @@ class LyricController extends Controller
     /**
      * Deletes a lyric entity.
      *
-     * @Route("/{id}", name="lyric_delete")
+     * @Route("/lyric/delete/{id}", name="lyric_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Lyric $lyric)

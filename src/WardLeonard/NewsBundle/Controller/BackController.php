@@ -12,10 +12,15 @@ use WardLeonard\NewsBundle\Form\NewsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Session\Session;
 
+/**
+ * Class BackController
+ * @package WardLeonard\NewsBundle\Controller
+ * @Route("/admin")
+ */
 class BackController extends Controller
 {
     /**
-     * @Route("/admin", name="back_news_list")
+     * @Route("/news", name="news_index")
      *
      */
     public function indexAction()
@@ -27,7 +32,7 @@ class BackController extends Controller
     }
 
     /**
-     * @Route("/admin/show/{id}", name="back_news_show")
+     * @Route("/news/show/{id}", name="news_show")
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -38,14 +43,14 @@ class BackController extends Controller
         if (!is_null($news)) {
             return $this->render('WardLeonardNewsBundle:Back:show.html.twig', array('news' => $news));
         } else {
-            return $this->redirect($this->generateUrl('back_news_list'));
+            return $this->redirect($this->generateUrl('news_index'));
         }
 
 
     }
 
     /**
-     * @Route("/admin/add", name="back_news_add")
+     * @Route("/news/add", name="news_new")
      * @Template
      * @param Request $request
      * @return array
@@ -83,7 +88,7 @@ class BackController extends Controller
 
             //$this->redirect($this->generateUrl('back_news_add'));
 
-            $this->redirectToRoute('back_news_list');
+            $this->redirectToRoute('news_index');
         }
 
          return array('form_add' => $form->createView(), 'titre' => 'Ajouter une news');
@@ -91,7 +96,7 @@ class BackController extends Controller
     }
 
     /**
-     * @Route("/admin/modify/{id}", name="back_news_modify")
+     * @Route("/news/modify/{id}", name="news_modify")
      * @param Request $request
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
@@ -122,7 +127,7 @@ class BackController extends Controller
             $em->flush();
             $filePhoto->move($this->getParameter('image_path'), $filePhoto->getClientOriginalName());
 
-            return $this->redirect($this->generateUrl('back_news_list'));
+            return $this->redirect($this->generateUrl('news_index'));
         }
         return $this->render('WardLeonardNewsBundle:Back:add.html.twig', array(
             'form_add' => $form->createView(),
@@ -134,7 +139,7 @@ class BackController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
-     * @Route("/admin/delete/{id}", name="back_news_delete")
+     * @Route("/news/delete/{id}", name="news_delete")
      *
      */
     public function deleteAction(Request $request, $id)
@@ -149,7 +154,6 @@ class BackController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('back_news_list'));
+        return $this->redirect($this->generateUrl('news_index'));
     }
-
 }

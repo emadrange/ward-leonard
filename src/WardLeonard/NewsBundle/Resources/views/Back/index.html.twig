@@ -4,12 +4,12 @@
 {% block backbody %}
 
 	<h1>Welcome to the Back:index page</h1>
-    <a href="{{ path('back_news_add') }}">Créer une news</a>
+    <a href="{{ path('news_new') }}">Créer une news</a>
     <ul>
 	    {% for value in news %}
-	        <li>{{ value.title }}<a href="{{ path('back_news_show', {'id': value.id}) }}">Voir</a> -
-	            <a href="{{ path('back_news_modify', {'id': value.id})}}">Modifier</a> -
-	            <a href="{{ path('back_news_delete',{'id': value.id}) }}">Supprimer</a></li>
+	        <li>{{ value.title }}<a href="{{ path('news_show', {'id': value.id}) }}">Voir</a> -
+	            <a href="{{ path('news_modify', {'id': value.id})}}">Modifier</a> -
+	            <a href="{{ path('news_delete',{'id': value.id}) }}">Supprimer</a></li>
 	    {% endfor %}
     </ul>
 

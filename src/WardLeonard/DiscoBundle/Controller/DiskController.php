@@ -38,7 +38,7 @@ class DiskController extends Controller
     /**
      * Creates a new disk entity.
      *
-     * @Route("/adddisk", name="disk_new")
+     * @Route("/disk/add", name="disk_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -71,7 +71,7 @@ class DiskController extends Controller
     /**
      * Finds and displays a disk entity.
      *
-     * @Route("/{id}", name="disk_show")
+     * @Route("/disk/show/{id}", name="disk_show")
      * @Method("GET")
      */
     public function showAction(Disk $disk)
@@ -87,7 +87,7 @@ class DiskController extends Controller
     /**
      * Displays a form to edit an existing disk entity.
      *
-     * @Route("/editdisk/{id}", name="disk_edit")
+     * @Route("/disk/edit/{id}", name="disk_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Disk $disk)
@@ -112,7 +112,7 @@ class DiskController extends Controller
     /**
      * Deletes a disk entity.
      *
-     * @Route("/deletedisk/{id}", name="disk_delete")
+     * @Route("/disk/delete/{id}", name="disk_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Disk $disk)
