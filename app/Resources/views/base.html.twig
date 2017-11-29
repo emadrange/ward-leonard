@@ -12,6 +12,7 @@
     </head>
     <body>
         {% block body %}
+
             {% block header %}
                 <header>
                     <img src="{{ asset('News/images/logo.png') }}" alt="logo-site" class="logo"><h1>Ward Leonard</h1>
@@ -26,10 +27,11 @@
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </header>
             {% endblock %}
+
             <main class="main">
-            {% block section %}
-            {% endblock %}
+            {% block section %}{% endblock %}
             </main>
+           
             {% block footer %}
                 <footer>
                     <ul>
@@ -39,7 +41,9 @@
                     </ul>
                 </footer>
             {% endblock %}
+
         {% endblock %}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
