@@ -1,12 +1,17 @@
+{% extends '::base.html.twig' %}
 
 {% block section %}
-	<ul>
-	{% for e in disks %}
-	<li>
-		<p>{{e.title}}
-			<i> Date de sortie: {{ e.dateSortie }}</i>
-		</p>
-	</li>
-	{% endfor %}
-	</ul>
+	<section>
+		<ul>
+		{% for e in disks %}
+			<li>
+				<p>{{e.title}}
+					<i> Date de sortie: {{ e.dateSortie | date('Y')}}</i> -
+					<a href="{{ path('disk_edit') }}">Editer</a> -
+					<a href="{{ path('disk_delete') }}">Supprimer</a>
+				</p>
+			</li>
+		{% endfor %}
+		</ul>
+	</section>
 {% endblock %}

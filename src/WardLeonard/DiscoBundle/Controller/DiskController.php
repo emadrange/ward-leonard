@@ -30,7 +30,7 @@ class DiskController extends Controller
 
         $disks = $em->getRepository('WardLeonardDiscoBundle:Disk')->findAll();
 
-        return $this->render('disk/index.html.twig', array(
+        return $this->render('WardLeonardDiscoBundle:disk:index.html.twig', array(
             'disks' => $disks,
         ));
     }
@@ -62,7 +62,7 @@ class DiskController extends Controller
             return $this->redirectToRoute('disk_show', array('id' => $disk->getId()));
         }
 
-        return $this->render('disk/new.html.twig', array(
+        return $this->render('WardLeonardDiscoBundle:disk:new.html.twig', array(
             'disk' => $disk,
             'form' => $form->createView(),
         ));
@@ -87,7 +87,7 @@ class DiskController extends Controller
     /**
      * Displays a form to edit an existing disk entity.
      *
-     * @Route("/{id}/edit", name="disk_edit")
+     * @Route("/editdisk/{id}", name="disk_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Disk $disk)
@@ -102,7 +102,7 @@ class DiskController extends Controller
             return $this->redirectToRoute('disk_edit', array('id' => $disk->getId()));
         }
 
-        return $this->render('disk/edit.html.twig', array(
+        return $this->render('WardLeonardDiscoBundle:disk:edit.html.twig', array(
             'disk' => $disk,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -112,7 +112,7 @@ class DiskController extends Controller
     /**
      * Deletes a disk entity.
      *
-     * @Route("/{id}", name="disk_delete")
+     * @Route("/deletedisk/{id}", name="disk_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Disk $disk)
