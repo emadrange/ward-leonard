@@ -4,11 +4,11 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('News/styles.css') }}">
-            <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600,700,900" rel="stylesheet">
-            <link rel="stylesheet" href="{{ asset('News/font-awesome.min.css') }}">
             {# On charge le bootstrap #}
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600,700,900" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('News/font-awesome.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('News/styles.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
