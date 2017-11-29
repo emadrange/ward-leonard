@@ -1,12 +1,16 @@
-{% extends "::base.html.twig" %}
+{% extends "WardLeonardNewsBundle::backlayout.html.twig" %}
 
-{% block title %}WardLeonardNewsBundle:Back:index{% endblock %}
 
-{% block body %}
-<h1>Welcome to the Back:index page</h1>
+{% block backbody %}
 
-    {% for value in news %}
-        {{ value.title }} <a href="{{ path('back_news_modify', {'id': value.id})}}"> Modifier </a>
-        <a href="{{ path('back_news_delete',{'id': value.id}) }}"> Supprimer </a>
-    {% endfor %}
+	<h1>Welcome to the Back:index page</h1>
+    <a href="{{ path('back_news_add') }}">Créer une news</a>
+    <ul>
+	    {% for value in news %}
+	        <li>{{ value.title }}<a href="{{ path('back_news_show', {'id': value.id}) }}">Voir</a> -
+	            <a href="{{ path('back_news_modify', {'id': value.id})}}">Modifier</a> -
+	            <a href="{{ path('back_news_delete',{'id': value.id}) }}">Supprimer</a></li>
+	    {% endfor %}
+    </ul>
+
 {% endblock %}

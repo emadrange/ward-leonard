@@ -24,5 +24,5 @@ ward_leonard_disco:
 ward_leonard_news:
     resource: "@WardLeonardNewsBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /news
 

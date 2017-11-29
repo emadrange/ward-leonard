@@ -1,6 +1,8 @@
 form:
   news:
-    title: "Titre"
+    title:
+        label: "Titre"
+        placeholder: "Saisir un titre"
     content:  "Contenu"
     author:  "Auteur"
     video:  "Vidéo"
