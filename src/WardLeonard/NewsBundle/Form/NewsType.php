@@ -20,12 +20,12 @@ class NewsType extends AbstractType
     {
         $builder
             ->add('title',TextType::class, array(
-                'label' => 'form.news.title',
+                'label' => 'form.news.title.label',
                 'required'=> false,
                 'trim' => true,
                 'attr' => array(
                     'class' => 'input',
-                    'placeholder' => 'saisir un titre'
+                    'placeholder' => 'form.news.title.placeholder'
                 )
             ))->add('content', TextareaType::class, array(
                 'label' => 'form.news.content',
@@ -33,7 +33,8 @@ class NewsType extends AbstractType
                 'attr' => array(
                     'rows' => 5,
                     'cols' => 40,
-                    'style' => 'color:red;background-color:#F0F8FF'
+                    'style' => 'color:red;background-color:#F0F8FF',
+                    'class' => 'tinymce'
                 )
             ))
             ->add('author', TextType::class, array(
