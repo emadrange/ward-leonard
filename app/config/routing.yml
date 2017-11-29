@@ -1,3 +1,15 @@
+ward_leonard_disco_title:
+    resource: "@WardLeonardDiscoBundle/Controller/TitleController.php"
+    type:     annotation
+
+ward_leonard_disco_lyric:
+    resource: "@WardLeonardDiscoBundle/Controller/LyricController.php"
+    type:     annotation
+
+ward_leonard_disco_disk:
+    resource: "@WardLeonardDiscoBundle/Controller/DiskController.php"
+    type:     annotation
+
 
 ward_leonard_group:
     resource: "@WardLeonardGroupBundle/Controller/"
