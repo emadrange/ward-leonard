@@ -1,12 +1,38 @@
-{% extends "::base.html.twig" %}
+{% extends "WardLeonardNewsBundle::backlayout.html.twig" %}
 
-{% block title %}WardLeonardNewsBundle:Back:index{% endblock %}
+{% block backbody %}
 
-{% block body %}
-<h1>Welcome to the Back:index page</h1>
+	<h1>Gestion des News</h1>
+	<p>
+	    <a href="{{ path('news_new') }}" class="btn btn-primary">
+			<i class="glyphicon glyphicon-plus"></i>
+	    	Créer une news
+	    </a>
+    </p>
 
     {% for value in news %}
-        {{ value.title }} <a href="{{ path('back_news_modify', {'id': value.id})}}"> Modifier </a>
-        <a href="{{ path('back_news_delete',{'id': value.id}) }}"> Supprimer </a>
+          
+    	<div class="row well">
+
+    		<div class="col-md-8">
+				<a href="{{ path('news_show', {'id': value.id}) }}">{{ value.title }}</a>
+			</div>
+
+    		<div class="col-md-4">
+		        <a href="{{ path('news_modify', {'id': value.id}) }}" class="btn btn-success">
+		        	<i class="glyphicon glyphicon-edit"></i>
+		        	Modifier
+		    	</a>
+
+		        <a href="{{ path('news_delete',{'id': value.id}) }}" class="btn btn-danger">
+		        	<i class="glyphicon glyphicon-trash"></i>
+		        	Supprimer
+		        </a>
+			</div>
+
+    	</div>
+    	
+    
     {% endfor %}
+
 {% endblock %}

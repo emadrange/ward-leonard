@@ -10,14 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Title controller.
  *
- * @Route("title")
+ * @Route("/admin")
  */
 class TitleController extends Controller
 {
     /**
      * Lists all title entities.
      *
-     * @Route("/", name="title_index")
+     * @Route("/titles", name="title_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -34,7 +34,7 @@ class TitleController extends Controller
     /**
      * Creates a new title entity.
      *
-     * @Route("/new", name="title_new")
+     * @Route("/title/new", name="title_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -60,7 +60,7 @@ class TitleController extends Controller
     /**
      * Finds and displays a title entity.
      *
-     * @Route("/{id}", name="title_show")
+     * @Route("/title/{id}", name="title_show")
      * @Method("GET")
      */
     public function showAction(Title $title)
@@ -76,7 +76,7 @@ class TitleController extends Controller
     /**
      * Displays a form to edit an existing title entity.
      *
-     * @Route("/{id}/edit", name="title_edit")
+     * @Route("/title/edit/{id}", name="title_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Title $title)
@@ -101,7 +101,7 @@ class TitleController extends Controller
     /**
      * Deletes a title entity.
      *
-     * @Route("/{id}", name="title_delete")
+     * @Route("/title/delete/{id}", name="title_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Title $title)

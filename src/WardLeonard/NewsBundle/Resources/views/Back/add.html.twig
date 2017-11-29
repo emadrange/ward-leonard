@@ -1,8 +1,8 @@
-{% extends '::base.html.twig' %}
+{% extends "WardLeonardNewsBundle::backlayout.html.twig" %}
 
 {% form_theme form_add with 'WardLeonardNewsBundle:Form:form_error.html.twig' %}
 
-{% block section %}
+{% block backbody %}
 
     <h2>{{ titre }}</h2>
 
@@ -16,7 +16,7 @@
 {{ form_widget(form_add.title) }}{{ form_errors(form_add.title) }}
 </div>
 {{ form_errors(form_add.content) }}
-{{ form_label(form_add.content, null, {'label_attr': {'class': 'danger'}}) }}
+{#{ form_label(form_add.content, null, {'label_attr': {'class': 'danger'}}) }#}
 {{ form_widget(form_add.content) }}
 {{ form_rest(form_add) }}
 {{ form_end(form_add) }}
@@ -24,18 +24,26 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('News/js/tinymce/jquery.tinymce.min.js') }}"></script>
+    <script src="{{ asset('News/js/tinymce/tinymce.min.js') }}"></script>
 <script>
+
     window.onload = function(){
 
+        tinymce.init({
+            selector:'textarea.tinymce',
+            themes: 'modern'
+        });
 
 
-        document.querySelector("textarea").textContent="";
+        /*document.querySelector("textarea").textContent="";
 
         var x = document.querySelectorAll("input");
         var i;
         for (i = 0; i < x.length; i++) {
             x[i].value = " ";
-        }
+        }*/
     }
 
 </script>

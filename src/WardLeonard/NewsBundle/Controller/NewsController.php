@@ -9,7 +9,7 @@ use WardLeonard\NewsBundle\Entity\News;
 class NewsController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home_page")
      */
     public function indexAction()
     {

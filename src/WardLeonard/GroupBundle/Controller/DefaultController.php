@@ -5,10 +5,15 @@ namespace WardLeonard\GroupBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Class DefaultController
+ * @package WardLeonard\GroupBundle\Controller
+ * @Route("/admin")
+ */
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/group")
      */
     public function indexAction()
     {

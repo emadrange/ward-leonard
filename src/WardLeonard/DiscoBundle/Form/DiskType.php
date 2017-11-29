@@ -17,18 +17,18 @@ class DiskType extends AbstractType
     {
         $builder
         ->add('title', TextType::class, array(
-            'label' => 'form.disk.title',
+            'label' => 'form.disk.title.label',
             'trim' => true,
             'attr' => array(
                 'class' => 'input',
-                'placeholder' => 'saisir un titre'
-        ))->add('dateSortie', DateType::class, array(
-            'label' => 'form.disk.date',
+                'placeholder' => 'form.disk.title.placeholder'
+        )))->add('dateSortie', DateType::class, array(
+            'label' => 'form.disk.date.label',
             'trim' => true,
             'attr' => array(
                 'class' => 'input',
-                'placeholder' => 'saisir une année de sortie'
-        ));
+                'placeholder' => 'form.disk.date.placeholder'
+        )));
     }
     
     /**
@@ -37,7 +37,8 @@ class DiskType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WardLeonard\DiscoBundle\Entity\Disk'
+            'data_class' => 'WardLeonard\DiscoBundle\Entity\Disk',
+            'translation_domain' => 'messages'
         ));
     }
 
