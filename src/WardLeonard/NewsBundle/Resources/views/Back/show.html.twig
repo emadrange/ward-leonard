@@ -1,6 +1,6 @@
-{% extends '::base.html.twig' %}
+{% extends "WardLeonardNewsBundle::backlayout.html.twig" %}
 
-{% block section %}
+{% block backbody %}
     <h2>{{ news.title }}</h2>
     <p>{{ news.content | raw }}</p>
 {% endblock %}
