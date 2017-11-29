@@ -14,15 +14,15 @@ ward_leonard_disco_disk:
 ward_leonard_group:
     resource: "@WardLeonardGroupBundle/Controller/"
     type:     annotation
-    prefix:   /group
+    prefix:   /
 
 ward_leonard_disco:
     resource: "@WardLeonardDiscoBundle/Controller/"
     type:     annotation
-    prefix:   /disco
+    prefix:   /
 
 ward_leonard_news:
     resource: "@WardLeonardNewsBundle/Controller/"
     type:     annotation
-    prefix:   /news
+    prefix:   /
 

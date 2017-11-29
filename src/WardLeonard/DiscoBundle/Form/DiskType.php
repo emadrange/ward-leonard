@@ -22,13 +22,13 @@ class DiskType extends AbstractType
             'attr' => array(
                 'class' => 'input',
                 'placeholder' => 'saisir un titre'
-        ))->add('dateSortie', DateType::class, array(
+        )))->add('dateSortie', DateType::class, array(
             'label' => 'form.disk.date',
             'trim' => true,
             'attr' => array(
                 'class' => 'input',
                 'placeholder' => 'saisir une année de sortie'
-        ));
+        )));
     }
     
     /**

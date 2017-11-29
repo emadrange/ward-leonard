@@ -14,14 +14,14 @@ use Symfony\Component\Form\Extension\Core\Type\ResetType;
 /**
  * Disk controller.
  *
- * @Route("disk")
+ * @Route("admin")
  */
 class DiskController extends Controller
 {
     /**
      * Lists all disk entities.
      *
-     * @Route("/admin/disks", name="disk_index")
+     * @Route("/disks", name="disk_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -38,7 +38,7 @@ class DiskController extends Controller
     /**
      * Creates a new disk entity.
      *
-     * @Route("/admin/adddisk", name="disk_new")
+     * @Route("/adddisk", name="disk_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
