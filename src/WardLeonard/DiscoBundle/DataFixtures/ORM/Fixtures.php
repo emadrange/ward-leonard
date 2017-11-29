@@ -4,7 +4,9 @@ namespace WardLeonard\DiscoBundle\DataFixtures\ORM;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use WardLeonard\NewsBundle\Entity\News;
+use WardLeonard\DiscoBundle\Entity\Disk;
+use WardLeonard\DiscoBundle\Entity\Lyric;
+use WardLeonard\DiscoBundle\Entity\Title;
 
 
 class Fixtures extends Fixture
@@ -71,6 +73,8 @@ class Fixtures extends Fixture
 
         
         $manager->persist($disk);
+        $manager->persist($title);
+        $manager->persist($lyric);
         $manager->flush();
 
     }

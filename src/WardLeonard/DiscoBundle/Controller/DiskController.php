@@ -3,9 +3,13 @@
 namespace WardLeonard\DiscoBundle\Controller;
 
 use WardLeonard\DiscoBundle\Entity\Disk;
+use WardLeonard\DiscoBundle\Form\DiskType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
 
 /**
  * Disk controller.
@@ -17,7 +21,7 @@ class DiskController extends Controller
     /**
      * Lists all disk entities.
      *
-     * @Route("/", name="disk_index")
+     * @Route("/admin/disks", name="disk_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -34,16 +38,23 @@ class DiskController extends Controller
     /**
      * Creates a new disk entity.
      *
-     * @Route("/new", name="disk_new")
+     * @Route("/admin/adddisk", name="disk_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
         $disk = new Disk();
-        $form = $this->createForm('WardLeonard\DiscoBundle\Form\DiskType', $disk);
+        $form = $this->createForm('WardLeonard\DiscoBundle\Form\DiskType', $disk)
+        ->add('submit', SubmitType::class, array(
+                'label' => 'form.disk.save'
+            ))
+        ->add('reset', ResetType::class, array(
+                'label' => 'form.disk.reset'
+            ));
+
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted('POST') && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($disk);
             $em->flush();
