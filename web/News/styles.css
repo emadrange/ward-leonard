@@ -94,6 +94,14 @@
 .articleNews small {
   font-size: 1rem; }
 
+form.form fieldset {
+  width: 50%;
+  margin: 0 auto; }
+  form.form fieldset.action {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
 * {
   margin: 0;
   padding: 0; }

@@ -3,6 +3,7 @@
 namespace WardLeonard\DiscoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Disk
@@ -25,6 +26,10 @@ class Disk
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ\s]*$/i",
+     *     message="validator.disk.title.regex"
+     * )
      */
     private $title;
 
