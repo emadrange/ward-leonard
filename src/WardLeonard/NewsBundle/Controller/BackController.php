@@ -53,7 +53,7 @@ class BackController extends Controller
      * @Route("/news/add", name="news_new")
      * @Template
      * @param Request $request
-     * @return array
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function addAction(Request $request){
         $form = $this->createForm(NewsType::class, new News(), array(
@@ -81,14 +81,17 @@ class BackController extends Controller
             $news = $form->getData();
             $filePhoto = $form['photo']->getData();
 
-            $news->setPhoto($filePhoto->getClientOriginalName());
+            if (!is_null($filePhoto)) {
+                $news->setPhoto($filePhoto->getClientOriginalName());
+                $filePhoto->move($this->getParameter('image_path'), $filePhoto->getClientOriginalName());
+            }
+
             $em->persist($news);
             $em->flush();
-            $filePhoto->move($this->getParameter('image_path'), $filePhoto->getClientOriginalName());
 
             //$this->redirect($this->generateUrl('back_news_add'));
 
-            $this->redirectToRoute('news_index');
+            return $this->redirectToRoute('news_index');
         }
 
          return array('form_add' => $form->createView(), 'titre' => 'Ajouter une news');
@@ -122,10 +125,13 @@ class BackController extends Controller
             $news = $form->getData();
             $filePhoto = $form['photo']->getData();
 
-            $news->setPhoto($filePhoto->getClientOriginalName());
+            if (!is_null($filePhoto)) {
+                $news->setPhoto($filePhoto->getClientOriginalName());
+                $filePhoto->move($this->getParameter('image_path'), $filePhoto->getClientOriginalName());
+            }
+
             $em->persist($news);
             $em->flush();
-            $filePhoto->move($this->getParameter('image_path'), $filePhoto->getClientOriginalName());
 
             return $this->redirect($this->generateUrl('news_index'));
         }
