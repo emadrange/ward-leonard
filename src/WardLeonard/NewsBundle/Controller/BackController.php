@@ -73,7 +73,6 @@ class BackController extends Controller
         if($request->isMethod('POST') && $form->isValid())
         {
             $session = new Session();
-
             $session->getFlashBag()->add('notice', 'Bravo : News enregistrée');
 
             $em =$this->getDoctrine()->getManager();

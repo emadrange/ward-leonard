@@ -2,7 +2,7 @@
     {%- if errors|length > 0 -%}
 
             {%- for error in errors -%}
-                <span>{{ error.message }}</span>
+                <span class="bg-danger">{{ error.message }}</span>
             {%- endfor -%}
 
     {%- endif -%}
