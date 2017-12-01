@@ -27,16 +27,21 @@
     {{ parent() }}
     <script src="{{ asset('News/js/tinymce/jquery.tinymce.min.js') }}"></script>
     <script src="{{ asset('News/js/tinymce/tinymce.min.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
     <script>
 
         window.onload = function(){
 
-            tinymce.init({
+            ClassicEditor.create( document.querySelector( '.ckeditor' ) ).catch( error => {
+                console.log( error );
+            });
+
+            /*tinymce.init({
                 selector:'textarea.tinymce',
                 themes: 'modern',
                 width: 600,
                 height: 300
-            });
+            });*/
 
             /*document.querySelector("textarea").textContent="";
 

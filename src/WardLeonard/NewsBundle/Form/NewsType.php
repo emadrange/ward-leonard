@@ -34,7 +34,8 @@ class NewsType extends AbstractType
                     'rows' => 5,
                     'cols' => 40,
                     'style' => 'color:red;background-color:#F0F8FF',
-                    'class' => 'tinymce'
+                    'class' => 'ckeditor'
+                    /*'class' => 'tinymce'*/
                 )
             ))
             ->add('author', TextType::class, array(
