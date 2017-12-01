@@ -17,12 +17,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
  * Class BackController
  * @package WardLeonard\NewsBundle\Controller
  * @Route("/admin")
+ * @Security("has_role('ROLE_ADMIN')")
  */
 class BackController extends Controller
 {
     /**
      * @Route("/news", name="news_index")
-     * @Security("has_role('ROLE_ADMIN')")
      */
     public function indexAction()
     {
