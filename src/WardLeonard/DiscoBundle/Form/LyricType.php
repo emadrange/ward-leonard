@@ -20,7 +20,8 @@ class LyricType extends AbstractType
             ->add('title', EntityType::class, array(
                 'class' => 'WardLeonardDiscoBundle:Title',
                 'choice_label' => 'title',
-                'label' => 'form.lyric.title.label'
+                'label' => 'form.lyric.title.label',
+                'placeholder' => 'form.lyric.title.placeholder'
             ))
             ->add('content', TextareaType::class, array(
                 'label' => 'form.lyric.content.label',

@@ -19,7 +19,8 @@ class TitleType extends AbstractType
             ->add('title', TextType::class)
             ->add('disk',   EntityType::class, array(
                 'class' => 'WardLeonardDiscoBundle:Disk',
-                'choice_label' => 'title'
+                'choice_label' => 'title',
+                'placeholder' => 'form.title.disk.placeholder'
                 ));
     }
     
@@ -29,7 +30,8 @@ class TitleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WardLeonard\DiscoBundle\Entity\Title'
+            'data_class' => 'WardLeonard\DiscoBundle\Entity\Title',
+            'translation_domain' => 'messages'
         ));
     }
 
@@ -40,6 +42,4 @@ class TitleType extends AbstractType
     {
         return 'wardleonard_discobundle_title';
     }
-
-
 }

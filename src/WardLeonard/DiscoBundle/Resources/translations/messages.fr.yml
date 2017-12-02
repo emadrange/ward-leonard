@@ -11,5 +11,9 @@ form:
     lyric:
         title:
             label: "Titre"
+            placeholder: "Sélectionner un titre"
         content:
             label: "Paroles"
+    title:
+        disk:
+            placeholder: "Sélectionner un disque"
