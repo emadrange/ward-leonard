@@ -46,8 +46,6 @@ class BackController extends Controller
         } else {
             return $this->redirect($this->generateUrl('news_index'));
         }
-
-
     }
 
     /**
