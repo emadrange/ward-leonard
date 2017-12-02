@@ -125,6 +125,29 @@ footer {
       list-style: none; }
       footer li a {
         color: white; } }
+form.form.login {
+  width: 50%;
+  margin: 200px auto 0 auto; }
+  form.form.login fieldset {
+    padding: 5px;
+    box-shadow: 4px 4px 4px gray;
+    margin: 4px auto;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3; }
+    form.form.login fieldset div {
+      margin: 4px; }
+      form.form.login fieldset div.error {
+        text-align: center;
+        background-color: #ff8989;
+        color: #620000; }
+      form.form.login fieldset div label {
+        display: inline-block;
+        width: 100px; }
+      form.form.login fieldset div input {
+        border: 1px solid gray;
+        border-radius: 5px; }
+
 * {
   margin: 0;
   padding: 0; }
