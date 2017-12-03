@@ -108,7 +108,9 @@ class BackController extends Controller
         $news = $em->getRepository('WardLeonardNewsBundle:News')->find($id);
 
         $form = $this->createForm(NewsType::class, $news, array(
-
+            'attr' => array(
+                'class' => 'form'
+            )
         ))
             ->add('submit', SubmitType::class, array(
                 'label' => 'form.news.save'

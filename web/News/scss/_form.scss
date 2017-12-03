@@ -2,7 +2,16 @@ form.form {
 
   fieldset {
     width: 50%;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+
+    label {
+      display: inline;
+    }
+
+    input.form-control, input.form-control-file {
+      display: inline;
+      width: auto;
+    }
 
     &.action {
       display: flex;

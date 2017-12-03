@@ -23,7 +23,7 @@ class NewsType extends AbstractType
                 'label' => 'form.news.title.label',
                 'trim' => true,
                 'attr' => array(
-                    'class' => 'input',
+                    'class' => 'form-control',
                     'placeholder' => 'form.news.title.placeholder'
                 )
             ))->add('content', TextareaType::class, array(
@@ -33,24 +33,31 @@ class NewsType extends AbstractType
                 'attr' => array(
                     'rows' => 5,
                     'cols' => 40,
-                    'style' => 'color:red;background-color:#F0F8FF',
-                    'class' => 'ckeditor'
-                    /*'class' => 'tinymce'*/
+                    'class' => 'tinymce'
                 )
             ))
             ->add('author', TextType::class, array(
                 'label' => 'form.news.author',
-                'trim' => true
+                'trim' => true,
+                'attr' => array(
+                    'class' => 'form-control'
+                )
             ))
             ->add('video', TextType::class,array(
                 'label' => 'form.news.video',
                 'required' => false,
-                'trim' => true
+                'trim' => true,
+                'attr' => array(
+                    'class' => 'form-control'
+                )
             ))
             ->add('photo',FileType::class, array(
                 'label' => 'form.news.photo',
                 'required' => false,
-                'mapped' => false
+                'mapped' => false,
+                'attr' => array(
+                    'class' => 'form-control-file'
+                )
             ));
     }
     

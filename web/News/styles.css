@@ -96,7 +96,12 @@
 
 form.form fieldset {
   width: 50%;
-  margin: 0 auto; }
+  /*margin: 0 auto;*/ }
+  form.form fieldset label {
+    display: inline; }
+  form.form fieldset input.form-control, form.form fieldset input.form-control-file {
+    display: inline;
+    width: auto; }
   form.form fieldset.action {
     display: flex;
     justify-content: center;

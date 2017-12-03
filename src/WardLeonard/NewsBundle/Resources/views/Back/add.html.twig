@@ -10,14 +10,37 @@
   {{ flashMessage }}
 {% endfor %}
 
-{{ form_start(form_add) }}
-<div>
-{{ form_label(form_add.title) }}
-{{ form_widget(form_add.title) }}{{ form_errors(form_add.title) }}
-</div>
-{{ form_errors(form_add.content) }}
-{#{ form_label(form_add.content, null, {'label_attr': {'class': 'danger'}}) }#}
-{{ form_widget(form_add.content) }}
+    {{ form_start(form_add) }}
+    <fieldset>
+        <div class="form-group row">
+            {{ form_label(form_add.title) }}
+            {{ form_widget(form_add.title) }}{{ form_errors(form_add.title) }}
+        </div>
+        <div class="form-group row">
+            {{ form_errors(form_add.content) }}
+            {#{ form_label(form_add.content, null, {'label_attr': {'class': 'danger'}}) }#}
+            {{ form_widget(form_add.content) }}
+        </div>
+        <div class="form-group row">
+            {{ form_label(form_add.author) }}
+            {{ form_widget(form_add.author) }}{{ form_errors(form_add.author) }}
+        </div>
+        <div class="form-group row">
+            {{ form_label(form_add.video) }}
+            {{ form_widget(form_add.video) }}{{ form_errors(form_add.video) }}
+        </div>
+        <div class="form-group row">
+            {{ form_label(form_add.photo) }}
+            {{ form_widget(form_add.photo) }}{{ form_errors(form_add.photo) }}
+        </div>
+    </fieldset>
+    <fieldset class="action">
+        {{ form_row(form_add.submit) }}
+        {{ form_row(form_add.reset) }}
+    </fieldset>
+
+
+
 {{ form_rest(form_add) }}
 {{ form_end(form_add) }}
 
@@ -32,16 +55,16 @@
 
         window.onload = function(){
 
-            ClassicEditor.create( document.querySelector( '.ckeditor' ) ).catch( error => {
+            /*ClassicEditor.create( document.querySelector( '.ckeditor' ) ).catch( error => {
                 console.log( error );
-            });
+            });*/
 
-            /*tinymce.init({
+            tinymce.init({
                 selector:'textarea.tinymce',
                 themes: 'modern',
-                width: 600,
+                width: 450,
                 height: 300
-            });*/
+            });
 
             /*document.querySelector("textarea").textContent="";
 
