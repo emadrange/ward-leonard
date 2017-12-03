@@ -50,31 +50,5 @@
     {{ parent() }}
     <script src="{{ asset('News/js/tinymce/jquery.tinymce.min.js') }}"></script>
     <script src="{{ asset('News/js/tinymce/tinymce.min.js') }}"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
-    <script>
-
-        window.onload = function(){
-
-            /*ClassicEditor.create( document.querySelector( '.ckeditor' ) ).catch( error => {
-                console.log( error );
-            });*/
-
-            tinymce.init({
-                selector:'textarea.tinymce',
-                themes: 'modern',
-                width: 450,
-                height: 300
-            });
-
-            /*document.querySelector("textarea").textContent="";
-
-            var x = document.querySelectorAll("input");
-            var i;
-            for (i = 0; i < x.length; i++) {
-                x[i].value = " ";
-            }*/
-        }
-
-    </script>
-
+    <script src="{{ asset('News/js/tinymce.init.js') }}"></script>
 {% endblock %}
