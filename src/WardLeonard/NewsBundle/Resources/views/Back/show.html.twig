@@ -1,7 +1,21 @@
 {% extends "WardLeonardNewsBundle::backlayout.html.twig" %}
 
 {% block backbody %}
-    <h2>{{ news.title }}</h2>
-    <p>{{ news.content | raw }}</p>
+    <section>
+        <h2>{{ news.title }}</h2>
+        <div>{{ news.content | raw }}</div>
+        {% if news.photo %}
+            <img src="{{ asset('News/images/' ~ news.photo) }}" alt="{{ news.photo }}">
+        {% else %}
+            <p>sans photo</p>
+        {% endif %}
+        {% if news.video %}
+            <iframe class="video" width="60%" height="auto" src="https://www.youtube.com/embed/{{ new.video }}"></iframe>
+        {% else %}
+            <p>sans vidéo</p>
+        {% endif %}
+        <p><small>{{ news.datepublication | date('d-m-Y') }}</small></p>
+        <p><a href="{{ path('news_index') }}">Retour à la liste de news</a></p>
+    </section>
 {% endblock %}
 
