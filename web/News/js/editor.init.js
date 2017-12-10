@@ -2,7 +2,7 @@
 
 window.addEventListener('load', () => {
 
-    tinymce.init({
+    /*tinymce.init({
         selector:'textarea.tinymce',
         themes: 'modern',
         width: 450,
@@ -10,6 +10,14 @@ window.addEventListener('load', () => {
         plugins: 'textcolor colorpicker link',
         toolbar1: ' undo redo | formatselect | bold italic | forecolor backcolor | link',
         toolbar2: 'fontselect fontsizeselect | alignleft aligncenter alignright alignjustify'
-    });
+    });*/
+
+});
+
+$(function(){
+
+   CKEDITOR.config.width = 450;
+   CKEDITOR.config.height = 300;
+   $("textarea.ckeditor").ckeditor();
 
 });

@@ -48,7 +48,10 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('News/js/tinymce/jquery.tinymce.min.js') }}"></script>
-    <script src="{{ asset('News/js/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ asset('News/js/tinymce.init.js') }}"></script>
+    <!--script src="{{ asset('News/js/tinymce/jquery.tinymce.min.js') }}"></script>
+    <script src="{{ asset('News/js/tinymce/tinymce.min.js') }}"></script-->
+    <script src="{{ asset('News/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('News/js/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('News/js/ckeditor/adapters/jquery.js') }}"></script>
+    <script src="{{ asset('News/js/editor.init.js') }}"></script>
 {% endblock %}
